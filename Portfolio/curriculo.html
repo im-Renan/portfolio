@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currículo - Renan Moreira</title>
+    <link rel="stylesheet" href="styles/stylesCurriculo.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&family=Bebas+Neue&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <canvas id="matrix"></canvas>
+
+    <section class="container">
+        <header class="cabecalho">
+            <figure class="logo">
+                <a href="contato.html">
+                    <img src="Assents/imagens/renan-logo.png" alt="Logo Renan Moreira" />
+                </a>
+            </figure>
+
+            <nav class="menu" id="topo">
+                <a href="index.html">Home</a>
+                <a href="quemSouEu.html">Quem Sou</a>
+                <a href="portifolio.html">Portfólio</a>
+                <a href="curriculo.html" class="ativo">Currículo</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+        </header>
+
+        <main class="curriculo">
+            <h1>Formação e Experiência</h1>
+
+            <section class="experiencia">
+                <article class="card">
+                    <button class="card-header">
+                        <figcaption>Sistemas de Informação @ IFMA</figcaption>
+                        </figure>
+                        <span class="toggle-btn">+</span>
+                    </button>
+                    <section class="card-body">
+                        <p>
+                            Início em 2024. Curso voltado à formação de profissionais em tecnologia, com base sólida em
+                            programação, algoritmos, estrutura de dados, engenharia de software, banco de dados, redes
+                            de computadores e desenvolvimento de sistemas web. Também inclui noções de gestão,
+                            matemática e segurança da informação. Foco atual em back-end e resolução de problemas
+                            computacionais.
+                        </p>
+                        </p>
+                    </section>
+                </article>
+
+                <article class="card">
+                    <button class="card-header">
+                        Formação Backend @ Rocketseat
+                        <span class="toggle-btn">+</span>
+                    </button>
+                    <section class="card-body">
+                        <p>Node.js, Express e MongoDB com API REST, autenticação e boas práticas de código.</p>
+                    </section>
+                </article>
+
+                <article class="card">
+                    <button class="card-header">
+                        Curso C e Estruturas de Dados @ IFMA
+                        <span class="toggle-btn">+</span>
+                    </button>
+                    <section class="card-body">
+                        <p>Vetores, ponteiros, matrizes e funções em C para resolver problemas computacionais.</p>
+                    </section>
+                </article>
+
+                <article class="card">
+                    <button class="card-header">
+                        Git e GitHub na Prática @ Udemy
+                        <span class="toggle-btn">+</span>
+                    </button>
+                    <section class="card-body">
+                        <p>Branches, merges, pull requests, fork, clone e trabalho em equipe com versionamento.</p>
+                    </section>
+                </article>
+
+                <article class="card">
+                    <button class="card-header">
+                        Competências Técnicas
+                        <span class="toggle-btn">+</span>
+                    </button>
+                    <section class="card-body">
+                        <ul>
+                            <li>Java • C • JavaScript</li>
+                            <li>Node.js • Express • MongoDB</li>
+                            <li>Git • GitHub • VS Code</li>
+                            <li>HTML • CSS • Figma</li>
+                        </ul>
+                    </section>
+                </article>
+
+                <article class="card">
+                    <button class="card-header">
+                        Objetivo Profissional
+                        <span class="toggle-btn">+</span>
+                    </button>
+                    <section class="card-body">
+                        <p>Buscar minha primeira experiência como dev backend ou estágio técnico em TI.</p>
+                        <img src="Assents/imagens/email-logo.png" alt="Certificado Node.js" class="certificado" />
+                    </section>
+                </article>
+            </section>
+        </main>
+
+        <footer class="rodape">
+            <section class="destaques">
+                <h3>Redes & Contato:</h3>
+                <section class="logos">
+                    <a href="https://github.com/im-Renan" target="_blank"><img src="Assents/imagens/github-logo.png"
+                            alt="GitHub"></a>
+                    <a href="https://linkedin.com/in/irenan-moreira" target="_blank"><img
+                            src="Assents/imagens/linkedin-logo.png" alt="LinkedIn"></a>
+                    <a href="https://www.instagram.com/i.renanx" target="_blank"><img
+                            src="Assents/imagens/insta-logo.png" alt="Insta"></a>
+                    <a href="mailto:renan.edc21@gmail.com" target="_blank"><img src="Assents/imagens/email-logo.png"
+                            alt="Email"></a>
+                </section>
+            </section>
+            <p>© 2025 - Desenvolvido por Renan Moreira</p>
+        </footer>
+
+        <nav class="menu-flutuante" id="menuFlutuante">
+            <img src="Assents/imagens/menu-flutuante.png" alt="Menu" class="menu-icon" />
+            <article class="menu-opcoes">
+                <a href="index.html" title="Home">Home</a>
+                <a href="quemSouEu.html" title="Quem Sou">Quem Sou</a>
+                <a href="portifolio.html" title="Portfólio">Portfólio</a>
+                <a href="curriculo.html" title="Currículo" class="ativo">Currículo</a>
+                <a href="contato.html" title="Contato">Contato</a>
+            </article>
+        </nav>
+
+        <a href="#" class="btn-topo" id="btnTopo">
+            <img src="Assents/imagens/setaTopo.png" alt="Voltar ao topo" />
+        </a>
+
+        <script src="Js/matrix.js"></script>
+        <script src="Js/menuFlutuante.js"></script>
+        <script src="Js/botaoTopo.js"></script>
+        <script src="Js/cardsExperiencias.js"></script>
+
+</html>
