@@ -39,7 +39,8 @@ body::before {
 .logo img {
   width: 80px;
   height: auto;
-  border-radius: 50%; /* se quiser manter redondo */
+  border-radius: 50%;
+  /* se quiser manter redondo */
 }
 
 
@@ -79,20 +80,17 @@ body::before {
 .sobre-container {
   display: flex;
   align-items: flex-start;
-  /* mantém topo do texto alinhado com topo da imagem */
   justify-content: flex-start;
-  /* agrupa texto e imagem lado a lado, sem espalhar */
-  gap: 280px;
-  /* espaçamento mais enxuto entre eles */
+  gap: 60px;
   flex-wrap: wrap;
-  /* pra empilhar em telas pequenas */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 section.sobre-texto {
   max-width: 600px;
+  flex: 1 1 400px;
 }
-
-
 
 .sobre-texto h1 {
   font-size: 3em;
@@ -106,10 +104,15 @@ section.sobre-texto {
 
 .conteudo-principal img {
   width: 400px;
-  height: 400px;
+  max-width: 100%;
+  /* nunca ultrapassar o container */
+  height: auto;
+  /* mantém proporção */
   border: 2px solid #000;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0;
+
 }
 
 .destaques {
@@ -154,7 +157,6 @@ section.sobre-texto {
   left: 0;
   z-index: -1;
   opacity: 0.25;
-  /* mais transparente pra não atrapalhar a leitura */
 }
 
 .menu-flutuante {
@@ -231,4 +233,271 @@ section.sobre-texto {
 
 .btn-topo:hover {
   opacity: 1;
+}
+
+/* Telas até 1200px */
+@media (max-width: 1200px) {
+  .cabecalho {
+    padding: 25px 40px;
+  }
+
+  .menu a {
+    font-size: 1.1em;
+    margin: 0 12px;
+    padding: 8px 12px;
+  }
+
+  .conteudo-principal {
+    padding: 30px 40px;
+  }
+
+  .sobre-texto h1 {
+    font-size: 2.6em;
+  }
+
+  .sobre-texto p {
+    font-size: 1.3em;
+  }
+
+  .conteudo-principal img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .destaques h3 {
+    font-size: 1.8em;
+  }
+
+  .logos a img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Telas até 1024px */
+@media (max-width: 1024px) {
+  body::before {
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+  }
+
+  .cabecalho {
+    padding: 20px 30px;
+  }
+
+  .logo img {
+    width: 70px;
+  }
+
+  .menu a {
+    font-size: 1em;
+    margin: 0 10px;
+    padding: 7px 10px;
+  }
+
+  .conteudo-principal {
+    padding: 25px 30px;
+  }
+
+  .sobre-container {
+    gap: 150px;
+  }
+
+  .sobre-texto h1 {
+    font-size: 2.4em;
+  }
+
+  .sobre-texto p {
+    font-size: 1.2em;
+  }
+
+  .conteudo-principal img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .destaques h3 {
+    font-size: 1.6em;
+  }
+
+  .logos a img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Telas até 768px (mobile/tablet) */
+@media (max-width: 768px) {
+  .cabecalho {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  /* Menu principal flexível, quebra linhas */
+  .menu {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .menu a {
+    font-size: 1em;
+    padding: 6px 10px;
+    margin: 5px 0;
+    flex: 1 1 auto;
+    min-width: 80px;
+    text-align: center;
+  }
+
+  .conteudo-principal {
+    padding: 20px;
+  }
+
+  /* Sobre-container empilha verticalmente */
+  .sobre-container {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .sobre-texto {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .sobre-texto h1 {
+    font-size: 2em;
+  }
+
+  .sobre-texto p {
+    font-size: 1.1em;
+  }
+
+  .conteudo-principal img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .destaques h3 {
+    font-size: 1.4em;
+  }
+
+  .logos a img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Responsividade do menu flutuante e botão topo */
+
+/* Telas até 768px */
+@media (max-width: 768px) {
+  .menu-flutuante {
+    top: 8%;
+    right: 12px;
+    padding: 6px;
+    border-radius: 8px;
+  }
+
+  .menu-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-opcoes {
+    padding: 6px;
+    gap: 10px;
+  }
+
+  .menu-opcoes a {
+    font-size: 1.2em;
+    padding: 6px 10px;
+  }
+
+  .btn-topo {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    display: block;
+  }
+}
+
+/* Telas até 480px */
+@media (max-width: 480px) {
+  .menu-flutuante {
+    top: 6%;
+    right: 8px;
+    padding: 5px;
+  }
+
+  .menu-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .menu-opcoes a {
+    font-size: 1em;
+    padding: 5px 8px;
+  }
+
+  .btn-topo {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    display: block;
+  }
+}
+
+/* Telas até 360px */
+@media (max-width: 360px) {
+  .menu-flutuante {
+    top: 5%;
+    right: 6px;
+    padding: 4px;
+  }
+
+  .menu-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .menu-opcoes a {
+    font-size: 0.9em;
+    padding: 4px 6px;
+  }
+
+  .btn-topo {
+    bottom: 12px;
+    right: 12px;
+    width: 35px;
+    height: 35px;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .sobre-container {
+    flex-direction: column;
+    gap: 30px;
+    max-width: 90%;
+    padding: 0 20px;
+  }
+
+  .conteudo-principal img {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
+
+  section.sobre-texto {
+    max-width: 100%;
+    text-align: center;
+  }
 }

@@ -28,7 +28,6 @@ body::before {
   z-index: -1;
 }
 
-
 .cabecalho {
   display: flex;
   justify-content: space-between;
@@ -41,17 +40,16 @@ body::before {
   width: 80px;
   height: auto;
   border-radius: 50%;
-  /* se quiser manter redondo */
 }
 
 
 .menu a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2em;
-    margin: 0 15px;
-    padding: 10px 15px;
-    border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin: 0 15px;
+  padding: 10px 15px;
+  border-radius: 8px;
 }
 
 .menu-opcoes a.ativo {
@@ -64,14 +62,14 @@ body::before {
 
 
 .menu a:hover {
-    background-color: white;
-    color: black;
+  background-color: white;
+  color: black;
 }
 
 .menu a.ativo {
-    background-color: #00ffff;
-    color: black;
-    font-weight: bold;
+  background-color: #00ffff;
+  color: black;
+  font-weight: bold;
 }
 
 
@@ -93,7 +91,6 @@ body::before {
   justify-content: center;
   margin-top: 40px;
   margin-bottom: 60px;
-  /* para não colar no rodapé */
 }
 
 .ver-mais a {
@@ -323,4 +320,320 @@ article.card-projeto {
 
 .btn-topo:hover {
   opacity: 1;
+}
+
+
+@media (max-width: 1200px) {
+  .cabecalho {
+    padding: 25px 40px;
+  }
+
+  .projetos {
+    padding: 30px 40px;
+  }
+
+  .projetos h1 {
+    font-size: 2.6em;
+  }
+
+  .ver-mais a {
+    font-size: 1.1em;
+    padding: 10px 20px;
+  }
+
+  .menu a {
+    font-size: 1.1em;
+    margin: 0 12px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  body::before {
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+  }
+
+  .cabecalho {
+    padding: 20px 30px;
+  }
+
+  .logo img {
+    width: 70px;
+  }
+
+  .menu a {
+    font-size: 1em;
+    margin: 0 10px;
+    padding: 7px 10px;
+  }
+
+  .projetos {
+    padding: 25px 30px;
+  }
+
+  .projetos h1 {
+    font-size: 2.4em;
+  }
+
+  .ver-mais a {
+    font-size: 1em;
+    padding: 8px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cabecalho {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  .menu {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .menu a {
+    font-size: 1em;
+    padding: 6px 10px;
+    margin: 5px 0;
+    flex: 1 1 auto;
+    min-width: 80px;
+    text-align: center;
+  }
+
+  .projetos {
+    padding: 20px;
+  }
+
+  .projetos h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  .ver-mais {
+    margin-top: 30px;
+    margin-bottom: 40px;
+  }
+
+  .ver-mais a {
+    font-size: 1em;
+    padding: 8px 20px;
+  }
+
+  section.grid-projetos {
+    gap: 20px;
+  }
+
+  article.card-projeto {
+    padding: 15px;
+  }
+
+  .card-projeto h2 {
+    font-size: 1.4em;
+  }
+
+  .card-projeto p {
+    font-size: 0.95em;
+  }
+
+  .card-projeto span {
+    font-size: 0.85em;
+    padding: 4px 8px;
+  }
+
+  .github-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .logos a img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .projetos h1 {
+    font-size: 1.8em;
+  }
+
+  .ver-mais a {
+    font-size: 0.95em;
+    padding: 7px 18px;
+  }
+
+  .card-projeto h2 {
+    font-size: 1.2em;
+  }
+
+  .card-projeto p {
+    font-size: 0.9em;
+  }
+
+  .card-projeto span {
+    font-size: 0.8em;
+    padding: 3px 7px;
+  }
+
+  .github-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .logos a img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 360px) {
+  .projetos h1 {
+    font-size: 1.6em;
+  }
+
+  .ver-mais a {
+    font-size: 0.9em;
+    padding: 6px 16px;
+  }
+
+  .card-projeto h2 {
+    font-size: 1.1em;
+  }
+
+  .card-projeto p {
+    font-size: 0.85em;
+  }
+
+  .card-projeto span {
+    font-size: 0.75em;
+    padding: 3px 6px;
+  }
+
+  .github-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .projetos {
+    padding: 50px 80px;
+  }
+
+  .projetos h1 {
+    font-size: 3.5em;
+  }
+
+  article.card-projeto {
+    padding: 25px;
+  }
+
+  .card-projeto h2 {
+    font-size: 1.8em;
+  }
+
+  .card-projeto p {
+    font-size: 1.1em;
+  }
+
+  .card-projeto span {
+    font-size: 1em;
+    padding: 6px 12px;
+  }
+
+  .github-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-flutuante {
+    top: 8%;
+    right: 12px;
+    padding: 6px;
+    border-radius: 8px;
+  }
+
+  .menu-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .menu-opcoes {
+    padding: 6px;
+    gap: 10px;
+  }
+
+  .menu-opcoes a {
+    font-size: 1.2em;
+    padding: 6px 10px;
+  }
+
+  .btn-topo {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-flutuante {
+    top: 6%;
+    right: 8px;
+    padding: 5px;
+  }
+
+  .menu-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .menu-opcoes a {
+    font-size: 1em;
+    padding: 5px 8px;
+  }
+
+  .btn-topo {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    display: block;
+  }
+}
+
+@media (max-width: 360px) {
+  .menu-flutuante {
+    top: 5%;
+    right: 6px;
+    padding: 4px;
+  }
+
+  .menu-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .menu-opcoes a {
+    font-size: 0.9em;
+    padding: 4px 6px;
+  }
+
+  .btn-topo {
+    bottom: 12px;
+    right: 12px;
+    width: 35px;
+    height: 35px;
+    display: block;
+  }
 }

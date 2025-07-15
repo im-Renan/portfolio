@@ -28,15 +28,6 @@ body::before {
   z-index: -1;
 }
 
-#matrix {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  opacity: 0.25;
-}
-
-/* Cabeçalho */
 .cabecalho {
   display: flex;
   justify-content: space-between;
@@ -51,7 +42,7 @@ body::before {
   border-radius: 50%;
 }
 
-/* Menu principal */
+
 .menu a {
   color: white;
   text-decoration: none;
@@ -60,6 +51,15 @@ body::before {
   padding: 10px 15px;
   border-radius: 8px;
 }
+
+.menu-opcoes a.ativo {
+  background-color: #00ffff;
+  color: black;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 8px;
+}
+
 
 .menu a:hover {
   background-color: white;
@@ -72,12 +72,6 @@ body::before {
   font-weight: bold;
 }
 
-.menu a.ativo:hover {
-  background-color: #00ffff;
-  color: white;
-}
-
-/* Conteúdo do currículo */
 .curriculo {
   padding: 60px 30px;
   position: relative;
@@ -111,7 +105,7 @@ article.card {
 }
 
 article.card.active {
-  max-height: 360px;
+  max-height: none;
   background-color: #2c2c2c;
 }
 
@@ -182,7 +176,6 @@ article.card.active .card-body {
   color: #00ffff;
 }
 
-/* Imagem de certificado */
 .certificado {
   margin-top: 15px;
   width: 100%;
@@ -195,7 +188,6 @@ article.card.active .card-body {
   object-fit: cover;
 }
 
-/* Redes sociais */
 .logos {
   display: flex;
   justify-content: center;
@@ -213,7 +205,6 @@ article.card.active .card-body {
   transform: scale(1.2);
 }
 
-/* Rodapé */
 .rodape {
   text-align: center;
   padding: 20px;
@@ -221,34 +212,54 @@ article.card.active .card-body {
   opacity: 0.6;
 }
 
-/* Menu flutuante */
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.25;
+}
+
 .menu-flutuante {
   position: fixed;
   top: 10%;
   right: 20px;
   transform: translateY(-10%);
   z-index: 100;
-  display: none;
+  display: none; /* escondido por padrão */
   flex-direction: column;
   align-items: center;
   gap: 15px;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
+/* Quando ativo via JS */
+.menu-flutuante.ativo {
+  display: flex;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Ícone para abrir o menu */
 .menu-icon {
   width: 50px;
   height: 50px;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .menu-icon:hover {
   transform: scale(1.2);
 }
 
+/* Opções internas do menu */
 .menu-opcoes {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 15px;
   margin-top: 10px;
@@ -257,15 +268,15 @@ article.card.active .card-body {
   border-radius: 10px;
 }
 
-.menu-flutuante:hover .menu-opcoes {
-  display: flex;
-}
-
 .menu-opcoes a {
   color: #00ffff;
   font-size: 1.5em;
   text-decoration: none;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-flutuante:hover .menu-opcoes {
+  display: flex;
 }
 
 .menu-opcoes a:hover {
@@ -273,19 +284,6 @@ article.card.active .card-body {
   color: white;
 }
 
-/* Destaque no link ativo do menu flutuante */
-.menu-opcoes a.ativo {
-  background-color: #00ffff;
-  color: black;
-  font-weight: bold;
-}
-
-.menu-opcoes a.ativo:hover {
-  background-color: #00ffff;
-  color: white;
-}
-
-/* Botão topo */
 .btn-topo {
   position: fixed;
   bottom: 30px;
@@ -307,4 +305,244 @@ article.card.active .card-body {
 
 .btn-topo:hover {
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .cabecalho {
+    padding: 15px 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu {
+    justify-content: center;
+    margin-top: 15px;
+  }
+
+  .menu a {
+    font-size: 0.95em;
+    padding: 7px 10px;
+  }
+
+  .curriculo {
+    padding: 40px 20px;
+  }
+
+  .curriculo h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+
+  .logos a img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .menu-flutuante {
+    bottom: 15px;
+    right: 15px;
+    padding: 6px;
+  }
+
+  .menu-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .menu-opcoes a {
+    font-size: 0.95em;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .curriculo {
+    padding: 30px 15px;
+  }
+
+  .curriculo h1 {
+    font-size: 2.2em;
+    margin-bottom: 30px;
+  }
+
+  .card-header {
+    font-size: 1em;
+    padding: 12px 16px;
+  }
+
+  .card-body {
+    font-size: 0.95em;
+    padding: 15px;
+  }
+
+  .certificado {
+    max-width: 250px;
+  }
+
+  .logos {
+    gap: 15px;
+  }
+
+  .logos a img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .menu a {
+    font-size: 0.9em;
+    margin: 3px;
+    padding: 6px 8px;
+  }
+
+  .menu-flutuante {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .menu-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .menu-opcoes a {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .curriculo h1 {
+    font-size: 2em;
+    margin-bottom: 25px;
+  }
+
+  .card-header {
+    font-size: 0.95em;
+  }
+
+  .card-body {
+    font-size: 0.9em;
+  }
+
+  .certificado {
+    max-width: 220px;
+  }
+
+  .menu-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .menu-opcoes a {
+    font-size: 0.85em;
+    padding: 5px 8px;
+  }
+
+  .btn-topo {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .curriculo h1 {
+    font-size: 1.8em;
+  }
+
+  .card-header {
+    font-size: 0.9em;
+  }
+
+  .card-body {
+    font-size: 0.85em;
+  }
+
+  .menu a {
+    font-size: 0.8em;
+    padding: 5px 7px;
+  }
+
+  .menu-flutuante {
+    bottom: 8px;
+    right: 8px;
+  }
+
+  .menu-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .menu-opcoes a {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+  .cabecalho {
+    padding: 10px 15px;
+    flex-direction: row;
+  }
+
+  .curriculo {
+    padding: 20px;
+  }
+
+  .card-header {
+    padding: 10px 14px;
+  }
+
+  .card-body {
+    padding: 12px;
+  }
+}
+
+@media (hover: hover) {
+  .menu a:hover {
+    background-color: white;
+    color: black;
+  }
+
+  .logos a:hover img {
+    transform: scale(1.2);
+  }
+}
+
+@media (min-width: 1600px) {
+  .curriculo {
+    max-width: 1200px;
+  }
+
+  .curriculo h1 {
+    font-size: 3.5em;
+  }
+
+  .card-header {
+    font-size: 1.4em;
+  }
+
+  .card-body {
+    font-size: 1.1em;
+  }
+
+  .certificado {
+    max-width: 350px;
+  }
+}
+
+@media (min-width: 2000px) {
+  body::before {
+    top: -200px;
+    left: -200px;
+    width: 800px;
+    height: 800px;
+  }
+
+  .curriculo {
+    padding: 80px 40px;
+  }
+
+  .certificado {
+    max-width: 400px;
+  }
 }
